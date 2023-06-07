@@ -6,7 +6,7 @@ const validator = require('validator')
 
 
 // Connect to MongoDB
-mongoose.connect("mongodb://0.0.0.0:27017/taskDB")
+mongoose.connect("mongodb+srv://ankit:test@cluster1.zepb5tv.mongodb.net/?retryWrites=true&w=majority/taskDB")
   .then(() => {
     console.log('Connected to MongoDB');
   })
@@ -155,7 +155,7 @@ app.delete('/api/users/:userId', async (req, res) => {
   });
   
   // console.log(process.env.PORT);
-  const port = process.env.PORT;
+  const port = process.env.PORT || 4000;
   app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
   });
